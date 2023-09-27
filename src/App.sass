@@ -1,0 +1,174 @@
+@import index
+h1
+    font-weight: 700
+    font-size: 40px
+h2
+    font-weight: 700
+    font-size: 20px
+    margin-top: 38px
+.container
+    padding: 50px
+.description
+    margin-top: 34px
+    max-width: 580px
+    font-size: 20px
+.quiz-container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: calc(432px + 34px)
+    max-width: 868px
+    padding: 34px 35px 65px
+    margin-top: 34px
+    background: $bg-blue
+    border-radius: 10px
+.dots
+    display: flex
+    gap: 10px
+.dots__item
+    width: 20px
+    height: 20px
+    background: $secondary-blue
+    border-radius: 20px
+    &--active
+        background: $primary-blue
+.number
+    margin-top: 16px
+    color: $gray
+.choises
+    display: flex
+    flex-direction: column
+    gap: 15px
+    margin-top: 32px
+.choises li
+    display: flex
+    align-items: center
+    cursor: pointer
+    &::before
+        content: ''
+        display: inline-block
+        margin-right: 10px
+        width: 15px
+        height: 15px
+        border: 1px solid #9A9A9A
+        border-radius: 15px
+        background: $white
+    &.selected-answer::before
+        border: 3px solid $secondary-blue 
+        background: $primary-blue
+.buttons
+    margin-top: 35px
+.btn
+    padding: 10px 15px
+    border-radius: 5px
+    font-weight: 700
+    border: 0
+    outline: 0
+    cursor: pointer
+    &--prev
+        background: $white
+        color: $black
+        margin-right: 10px
+    &--next
+        background: $primary-blue
+        color: $white
+    &:hover
+        opacity: .75
+.cards
+    margin-top: 65px
+    display: grid
+    grid-template-columns: repeat(auto-fit, 240px)
+    grid-template-rows: repeat(2, 1fr)
+    grid-column-gap: 35px
+    grid-row-gap: 40px
+.card__item
+    position: relative
+    &--image
+        max-width: 240px
+        max-height: 240px
+        width: auto
+        height: 100%
+        border: 1px solid #E9E9E9
+        border-radius: 6.75px
+        img
+            display: block
+            width: auto
+            height: 100%
+            margin: auto
+    &--like
+        position: absolute
+        top: 15px
+        right: 15px
+        &:hover
+            cursor: pointer
+            path
+                stroke: red
+                transition: all .35s
+        &.like--active
+            svg
+                fill: red
+            path
+                stroke: red
+    &--title
+        margin-top: 22px
+        font-size: 18px
+        font-weight: 500
+        line-height: 130%
+        overflow: hidden
+        display: -webkit-box
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        height: 46px
+    &--price
+        display: flex
+        align-items: baseline
+        margin-top: 15px
+        p
+            font-size: 27px
+            font-style: normal
+            font-weight: 600
+            line-height: 136.9%
+            span
+                font-size: 20px
+    p.price--old
+        color: #8b8b8b
+        font-size: 20px
+        text-decoration: line-through
+        margin-right: 10px
+.pagination
+    display: flex
+    gap: 12px
+    color: #b8b8b8
+    margin-top: 62px
+.page-link
+    font-size: 20px
+    &--active,
+    &:hover
+        color: $primary-blue
+    
+@media(max-width: 1200px) and (min-width:541px)
+    .cards
+        grid-template-columns: repeat(auto-fit, 180px)
+    .card__item--image
+        max-width: 180px
+        max-height: 180px
+@media(max-width: 540px)
+    h1
+        font-size: 32px
+    h2, 
+    .description
+        font-size: 18px
+    .cards
+        grid-template-columns: 1fr
+        grid-template-rows: auto
+    .card__item--title
+        font-size: 16px
+    .card__item--price
+        margin-top: 5px
+    .card__item--price p
+        font-size: 18px
+    .card__item p.price--old
+        font-size: 15px
+    .card__item--like
+        left: 15px
+        right: 0
