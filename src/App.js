@@ -21,8 +21,6 @@ function App() {
     fetchData();
   }, []);
 
-  
-
   return (
       <Quiz 
         questions={jsQuiz.questions} 
